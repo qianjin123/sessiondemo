@@ -1,6 +1,7 @@
 # sessiondemo
 最简单session机制
 servlet + tomcat ,一个登录页展示最简单session+cookie机制，比如关闭浏览器如何避免session失效（设置cookie的有效期）。
+#  request.getSession() 发生了啥
 /***
 			 * HttpSession session = request.getSession();此行发生了如下的:
 			 * 1.如果没有创建过则创建一个HttpSession对象，tomcat生成一个唯一标识作为这个session的id,存入服务器；
