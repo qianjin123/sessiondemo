@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>scmvc</display-name>
+  
+  <filter>
+    <filter-name>SessionFilter</filter-name>
+    <filter-class>com.qjin.demo.FilterDemo</filter-class>
+    <init-param>    
+		<param-name>excludedPages</param-name>    
+		<param-value>/login.jsp,/login</param-value>    
+	</init-param> 
+  </filter>
+
+<filter-mapping>
+    <filter-name>SessionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+  
+ <servlet>
+       <servlet-name>loginDemo</servlet-name>
+       <servlet-class>com.qjin.demo.SessionDemo</servlet-class>
+     </servlet>
+
+     <servlet-mapping>
+       <servlet-name>loginDemo</servlet-name>
+       <url-pattern>/login</url-pattern>
+     </servlet-mapping>
+ 
+</web-app>
